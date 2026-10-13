@@ -1,0 +1,110 @@
+import { Pet, QuickSolution, Achievement } from '../types';
+
+export const INITIAL_PETS: Pet[] = [
+  {
+    id: 'pet_chaska_01',
+    name: 'Chaska',
+    species: 'perro',
+    breed: 'Viringo Mestizo (Perro Peruano)',
+    ageYears: 1,
+    ageMonths: 4,
+    gender: 'hembra',
+    weightKg: 11.5,
+    photoUrl: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80',
+    temperament: ['Curiosa', 'Enérgica', 'Sociable'],
+    notes: 'Tiende a emocionarse mucho al ver otros perros en el malecón.',
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'pet_rocky_02',
+    name: 'Rocky',
+    species: 'perro',
+    breed: 'Mestizo de Schnauzer',
+    ageYears: 2,
+    ageMonths: 1,
+    gender: 'macho',
+    weightKg: 8.4,
+    photoUrl: 'https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?auto=format&fit=crop&w=600&q=80',
+    temperament: ['Atento', 'Juguetón', 'Protector'],
+    notes: 'Alerta cuando tocan el interfono en el departamento.',
+    createdAt: new Date().toISOString(),
+  },
+];
+
+export const QUICK_SOLUTIONS: QuickSolution[] = [
+  {
+    id: 'sol_1',
+    species: 'perro',
+    title: 'Ladridos Histéricos al Timbre o Repartidores',
+    trigger: 'Suena el interfono o llega una moto de delivery.',
+    immediateAction: 'Esparce de inmediato 10 premios pequeños en una alfombra olfativa lejos de la puerta. El acto de olfatear baja las pulsaciones cardíacas y redirige la atención de forma incompatible con el ladrido.',
+    whatNotToDo: 'Gritarle "¡Cállate!" o "¡No!". El perro interpreta tus gritos como que tú también estás "ladrando" al visitante, retroalimentando la alarma.',
+    peruvianUrbanTip: 'En edificios con portería o recepción constante de pedidos de delivery en Lima, ten siempre un frasquito de snacks listos junto al sofá.',
+  },
+  {
+    id: 'sol_2',
+    species: 'perro',
+    title: 'Cachorro que Muerde Manos y Tobillos',
+    trigger: 'Momento de juego o hiperactividad al llegar a casa.',
+    immediateAction: 'Congélate como una estatua, cruza los brazos y retira la atención visual. Al mismo tiempo, ofrece un juguete mordedor adecuado de goma o cuerda mojada y congelada.',
+    whatNotToDo: 'Mover las manos rápidamente o apartarlas con chillidos agudos; para el cachorro simula una presa en movimiento y estimula su instinto de presa.',
+    peruvianUrbanTip: 'Cáñamo o cuerdas resistentes empapadas en caldo de patas de pollo sin condimentos y congeladas alivian la encía del cachorro en época de muda.',
+  },
+  {
+    id: 'sol_3',
+    species: 'perro',
+    title: 'Tirones Fuertes de Correa en el Paseo',
+    trigger: 'Ganas de llegar rápido al parque o estímulos lejanos.',
+    immediateAction: 'Técnica del Árbol Rojo: cuando la correa se tense, detén la marcha por completo sin dar jalones. En cuanto afloje la tensión y te mire, premia junto a tu pierna y continúa caminando.',
+    whatNotToDo: 'Dar tirones bruscos de castigo o usar collares de ahorque. Generan reflejo de oposición (el perro tira más contra el dolor) y lesionan la tráquea.',
+    peruvianUrbanTip: 'Usa arnés ergonómico en "Y" con enganche frontal en el pecho. En avenidas con veredas angostas, camina del lado de la pared y permite momentos de olfateo libre.',
+  },
+  {
+    id: 'sol_4',
+    species: 'perro',
+    title: 'Pánico por Cohetones o Fuegos Artificiales',
+    trigger: 'Celebraciones vecinales, fiestas o detonaciones ruidosas.',
+    immediateAction: 'Permite que se esconda en el lugar que elija (bajo la cama, closet o baño). Cierra ventanas y cortinas, enciende un ventilador o música clásica relajante y acompáñalo con voz suave.',
+    whatNotToDo: 'Obligarlo a salir de su escondite a la fuerza o encerrarlo en un patio exterior donde pueda saltar muros desesperado por el miedo.',
+    peruvianUrbanTip: 'Prepara el cuarto interior más silencioso de tu vivienda con una camiseta usada tuya con tu olor y snacks masticables duraderos.',
+  },
+];
+
+export const INITIAL_ACHIEVEMENTS: Achievement[] = [
+  {
+    id: 'ach_primer_click',
+    title: 'Primer Marcador',
+    description: 'Completaste la primera carga del clicker con éxito.',
+    iconName: 'Zap',
+    category: 'entrenamiento',
+    unlockedAt: new Date().toISOString(),
+  },
+  {
+    id: 'ach_racha_3',
+    title: 'Constancia Peruana',
+    description: '3 días consecutivos de refuerzo positivo completados.',
+    iconName: 'Flame',
+    category: 'racha',
+  },
+  {
+    id: 'ach_paseo_zen',
+    title: 'Paseo Zen',
+    description: 'Paseo relajado con correa floja sin tirones.',
+    iconName: 'Compass',
+    category: 'entrenamiento',
+  },
+  {
+    id: 'ach_diagnostico_ia',
+    title: 'Etología Digital',
+    description: 'Realizaste tu primer Diagnóstico Multimodal Canino con IA en AdiestraPet.',
+    iconName: 'BrainCircuit',
+    category: 'diagnostico',
+  },
+  {
+    id: 'ach_constancia_canina',
+    title: 'Tutor Ejemplar',
+    description: 'Rutinas de estimulación positiva y calma consolidadas.',
+    iconName: 'Award',
+    category: 'entrenamiento',
+  },
+];
