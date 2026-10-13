@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">AdiestraPet</string>
+    <string name="title_activity_main">AdiestraPet</string>
+    <string name="package_name">com.adiestrapet.pe</string>
+    <string name="custom_url_scheme">com.adiestrapet.pe</string>
+</resources>
