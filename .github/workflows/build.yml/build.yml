@@ -1,0 +1,38 @@
+name: Compilar Android AAB
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Revisar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Sincronizar Capacitor con Android
+        run: npx cap sync android
+
+      - name: Compilar proyecto web
+        run: npm run build
+
+      - name: Construir el archivo AAB de Android
+        run: |
+          cd android
+          ./gradlew bundleRelease
+
+      - name: Guardar archivo AAB resultante
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-aab
+          path: android/app/build/outputs/bundle/release/app-release.aab
+          
