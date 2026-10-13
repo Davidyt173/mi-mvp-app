@@ -1,0 +1,11 @@
+{
+	"appId": "com.adiestrapet.pe",
+	"appName": "AdiestraPet",
+	"webDir": "dist",
+	"bundledWebRuntime": false,
+	"server": {
+		"androidScheme": "https",
+		"cleartext": false
+	},
+	"android": {}
+}

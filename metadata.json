@@ -1,0 +1,6 @@
+{
+  "name": "AdiestraPet - Adiestramiento Canino Perú",
+  "description": "App Android premium de adiestramiento canino con Diagnóstico Multimodal IA, refuerzo positivo, clicker y soluciones etológicas en Soles (PEN).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

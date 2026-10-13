@@ -1,0 +1,57 @@
+name: Compilar Android AAB y APK (AdiestraPet)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Compilar Frontend y Sincronizar Capacitor
+        run: npm run android:sync
+
+      - name: Configurar Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: 17
+
+      - name: Dar permisos de ejecución a Gradle
+        run: chmod +x android/gradlew
+
+      - name: Compilar APK de Prueba (Debug)
+        run: |
+          cd android
+          ./gradlew assembleDebug
+
+      - name: Compilar Android App Bundle (Release AAB)
+        run: |
+          cd android
+          ./gradlew bundleRelease
+
+      - name: Guardar APK como Artefacto Descargable
+        uses: actions/upload-artifact@v4
+        with:
+          name: adiestrapet-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Guardar AAB para Google Play como Artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: adiestrapet-release-aab
+          path: android/app/build/outputs/bundle/release/app-release.aab
